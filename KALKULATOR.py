@@ -4,7 +4,7 @@ from functools import partial
 
 def bersih_all():
     layar.delete(0, END)
-    layar.insert(0, 0)
+    layar.insert(0, '')
 
 
 def bersih():
@@ -17,7 +17,7 @@ def angka(value):
     current_value = layar.get()
     if current_value == 'Invalid':
         layar.delete(0, END)
-    if (current_value == '0' and value == '.') or current_value != '0':
+    if '.' not in current_value or value != '.':
         layar.insert(END, value)
 
 
